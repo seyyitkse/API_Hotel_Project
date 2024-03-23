@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace HotelProject.EntityLayer.Concrete
+namespace HotelProject.WebUI.Models.Staff
 {
-    public class Staff
+    public class StaffViewModel
     {
         [Key]
         public int StaffID { get; set; }

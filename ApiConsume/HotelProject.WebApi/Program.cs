@@ -24,6 +24,15 @@ builder.Services.AddScoped<ISubscribeService ,SubscribeManager>();
 builder.Services.AddScoped<ITestimonialDal, EfTestimonialDal>();
 builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
 
+builder.Services.AddCors(opt=>
+{
+    opt.AddPolicy("HotelApiCors", opts => 
+    {
+        opts.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+    });
+});
+
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -41,6 +50,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors("HotelApiCors");
 app.UseAuthorization();
 
 app.MapControllers();
