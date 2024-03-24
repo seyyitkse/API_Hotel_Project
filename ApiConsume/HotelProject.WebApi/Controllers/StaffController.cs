@@ -15,7 +15,6 @@ namespace HotelProject.WebApi.Controllers
         {
             _staffService = staffService;
         }
-
         [HttpGet]
         public IActionResult StaffList()
         {
