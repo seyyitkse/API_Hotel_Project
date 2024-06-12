@@ -4,7 +4,7 @@
 
 namespace HotelProject.DataAccessLayer.Migrations
 {
-    public partial class mig1 : Migration
+    public partial class add_table : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -50,6 +50,7 @@ namespace HotelProject.DataAccessLayer.Migrations
                     StaffID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     SocialMedia1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     SocialMedia2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     SocialMedia3 = table.Column<string>(type: "nvarchar(max)", nullable: true)

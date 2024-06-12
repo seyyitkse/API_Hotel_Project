@@ -12,7 +12,7 @@ namespace HotelProject.DataAccessLayer.Concrete
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=MSI-BRAVO;database=DbHotel;Trusted_Connection=true;MultipleActiveResultSets=true;TrustServerCertificate=true;encrypt=false");
+            optionsBuilder.UseSqlServer("server=DESKTOP-6B43INH\\SQLEXPRESS;database=DbHotel;Trusted_Connection=true;MultipleActiveResultSets=true;TrustServerCertificate=true;encrypt=false");
         }
         public DbSet<Room> Rooms{ get; set; }
         public DbSet<Service> Services{ get; set; }
