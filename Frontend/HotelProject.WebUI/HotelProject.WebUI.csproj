@@ -22,4 +22,11 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\ApiConsume\HotelProject.DataAccessLayer\HotelProject.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\..\ApiConsume\HotelProject.DtoLayer\HotelProject.DtoLayer.csproj" />
+    <ProjectReference Include="..\..\ApiConsume\HotelProject.EntityLayer\HotelProject.EntityLayer.csproj" />
+    <ProjectReference Include="..\..\ApiConsume\HotelProject.WebApi\HotelProject.WebApi.csproj" />
+  </ItemGroup>
+
 </Project>
