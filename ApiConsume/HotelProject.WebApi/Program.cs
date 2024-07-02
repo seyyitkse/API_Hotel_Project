@@ -4,6 +4,7 @@ using HotelProject.DataAccessLayer.Abstract;
 using HotelProject.DataAccessLayer.Concrete;
 using HotelProject.DataAccessLayer.EntityFramework;
 using HotelProject.EntityLayer.Concrete;
+using HotelProject.WebApi.Mapping;
 using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,6 +24,8 @@ builder.Services.AddScoped<ISubscribeService ,SubscribeManager>();
 
 builder.Services.AddScoped<ITestimonialDal, EfTestimonialDal>();
 builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
+
+builder.Services.AddAutoMapper(typeof(AutoMapperConfig));
 
 builder.Services.AddCors(opt=>
 {
