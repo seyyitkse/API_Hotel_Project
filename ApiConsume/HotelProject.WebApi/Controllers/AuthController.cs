@@ -1,5 +1,6 @@
 ﻿using HotelProject.BusinessLayer.Abstract;
 using HotelProject.DtoLayer.AuthDto;
+using HotelProject.DtoLayer.Response.User;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -30,6 +31,26 @@ namespace HotelProject.WebApi.Controllers
             }
 
             return BadRequest("Invalid model");
+        }
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] UserLoginDto model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new UserManagerResponse
+                {
+                    Message = "Geçersiz model",
+                    IsSuccess = false
+                });
+            }
+
+            var result = await _userService.LoginUserAsync(model);
+            if (result.IsSuccess)
+            {
+                return Ok(result);
+            }
+
+            return BadRequest(result);
         }
     }
 }
