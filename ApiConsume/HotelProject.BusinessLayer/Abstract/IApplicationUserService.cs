@@ -7,5 +7,7 @@ namespace HotelProject.BusinessLayer.Abstract
     public interface IApplicationUserService:IGenericService<AppUser>
     {
         Task<UserManagerResponse> RegisterUserAsync(UserAddDto model);
+        Task<UserManagerResponse> LoginUserAsync(UserLoginDto model);
+
     }
 }
