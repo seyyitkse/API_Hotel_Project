@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\HotelProject.DataAccessLayer\HotelProject.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\HotelProject.DtoLayer\HotelProject.DtoLayer.csproj" />
     <ProjectReference Include="..\HotelProject.EntityLayer\HotelProject.EntityLayer.csproj" />
   </ItemGroup>
 
