@@ -15,7 +15,7 @@ builder.Services.AddIdentity<AppUser, AppRole>(options =>
     options.Password.RequireDigit = true;
     options.Password.RequireLowercase = true;
     options.Password.RequireUppercase = true;
-    options.Password.RequiredLength = 5;
+    options.Password.RequiredLength = 5;        
 }).AddEntityFrameworkStores<Context>().AddDefaultTokenProviders();
 builder.Services.AddScoped<IStaffDal, EfStaffDal>();
 builder.Services.AddScoped<IStaffService,StaffManager>();
