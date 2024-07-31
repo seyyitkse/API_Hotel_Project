@@ -4,6 +4,7 @@ using HotelProject.DataAccessLayer.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelProject.DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20240731092401_add_aboutus_table")]
+    partial class add_aboutus_table
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -22,15 +24,15 @@ namespace HotelProject.DataAccessLayer.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("HotelProject.EntityLayer.Concrete.About", b =>
+            modelBuilder.Entity("HotelProject.EntityLayer.Concrete.AboutUs", b =>
                 {
-                    b.Property<int>("AboutID")
+                    b.Property<int>("AboutUsId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AboutID"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AboutUsId"), 1L, 1);
 
-                    b.Property<string>("Content1")
+                    b.Property<string>("Content")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("CustomerCount")
@@ -48,9 +50,9 @@ namespace HotelProject.DataAccessLayer.Migrations
                     b.Property<string>("Title2")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("AboutID");
+                    b.HasKey("AboutUsId");
 
-                    b.ToTable("Abouts");
+                    b.ToTable("AboutUs");
                 });
 
             modelBuilder.Entity("HotelProject.EntityLayer.Concrete.AppRole", b =>
