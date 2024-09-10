@@ -23,5 +23,30 @@ namespace HotelProject.DataAccessLayer.EntityFramework
             var values =context.Bookings.Where(x => x.BookingId == booking.BookingId).FirstOrDefault().Status = "Onaylandi";
             context.SaveChanges();
         }
+        public void BookingStatusChangedCanceled(Booking booking)
+        {
+            var context = new Context();
+            var values = context.Bookings.Where(x => x.BookingId == booking.BookingId).FirstOrDefault().Status = "Iptal";
+            context.SaveChanges();
+        }
+        public void BookingStatusChangedWaiting(Booking booking)
+        {
+            var context = new Context();
+            var values = context.Bookings.Where(x => x.BookingId == booking.BookingId).FirstOrDefault().Status = "Beklemede";
+            context.SaveChanges();
+        }
+        public void BookingStatusChangedCompleted(Booking booking)
+        {
+            var context = new Context();
+            var values = context.Bookings.Where(x => x.BookingId == booking.BookingId).FirstOrDefault().Status = "Tamamlandi";
+            context.SaveChanges();
+        }
+        public void BookingStatusChangedApprovedId(int id)
+        {
+            var context = new Context();
+            var values = context.Bookings.Find(id);
+            values.Status = "Onaylandi";
+            context.SaveChanges();
+        }
     }
 }
