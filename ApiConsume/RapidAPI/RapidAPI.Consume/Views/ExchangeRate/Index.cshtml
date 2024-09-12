@@ -1,0 +1,26 @@
+﻿@model Rootobject
+
+<h2>Exchange Rates</h2>
+
+<p>Status: @Model.status</p>
+<p>Message: @Model.message</p>
+<p>Timestamp: @Model.timestamp</p>
+<p>Base Currency Date: @Model.data.base_currency_date</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Currency</th>
+            <th>Exchange Rate Buy</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var rate in Model.data.exchange_rates)
+        {
+            <tr>
+                <td>@rate.currency</td>
+                <td>@rate.exchange_rate_buy</td>
+            </tr>
+        }
+    </tbody>
+</table>
