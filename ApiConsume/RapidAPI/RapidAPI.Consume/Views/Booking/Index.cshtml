@@ -1,0 +1,32 @@
+﻿@model BookingRootobject
+@{
+    int counter = 0;
+}
+<h2>Otel Listesi</h2>
+
+
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Otel Adı</th>
+                <th>Otel Puanı</th>
+                <th>Detaylar</th>  
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var hotel in Model.data.hotels)
+            {
+                counter++;  
+                <tr>
+                    <td>@counter</td>
+                    <td>@hotel.property.name</td>
+                    <td>@hotel.property.reviewScore </td>
+                    <td><a href="#" class="btn btn-outline-info">Detaylar</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
