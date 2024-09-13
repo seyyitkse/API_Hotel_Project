@@ -1,0 +1,35 @@
+﻿@model SearchRootobject
+
+<h2>Lokasyon</h2>
+
+<p>Status: @Model.status</p>
+<p>Message: @Model.message</p>
+<p>Timestamp: @Model.timestamp</p>
+<div class="container">
+    <br />
+    @using(Html.BeginForm("Index", "SearchLocationID", FormMethod.Get))
+    {
+        <div class="form-group">
+            <label for="city_name">Lokasyon Adı:</label>
+            <input type="text" class="form-control" id="city_name" name="city_name">
+        </div>
+        <button type="submit" class="btn btn-primary">Ara</button>
+    }
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Lokasyon ID</th>
+                <th>Lokasyon Adı</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var rate in Model.data)
+            {
+                <tr>
+                    <td>@rate.dest_id </td>
+                    <td>@rate.city_name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
