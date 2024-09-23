@@ -12,7 +12,6 @@ namespace HotelProject.BusinessLayer.Concrete
         {
             _contactDal = contactDal;
         }
-
         public void TDelete(Contact entity)
         {
             _contactDal.Delete(entity);
@@ -32,7 +31,6 @@ namespace HotelProject.BusinessLayer.Concrete
         {
             _contactDal.Insert(entity);
         }
-
         public void TUpdate(Contact entity)
         {
             _contactDal.Update(entity);
