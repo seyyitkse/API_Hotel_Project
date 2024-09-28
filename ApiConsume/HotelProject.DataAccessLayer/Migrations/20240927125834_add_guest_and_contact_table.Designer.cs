@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelProject.DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20240918132758_add_contact_table")]
-    partial class add_contact_table
+    [Migration("20240927125834_add_guest_and_contact_table")]
+    partial class add_guest_and_contact_table
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

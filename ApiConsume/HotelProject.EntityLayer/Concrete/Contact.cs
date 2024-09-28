@@ -1,7 +1,10 @@
-﻿namespace HotelProject.EntityLayer.Concrete
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace HotelProject.EntityLayer.Concrete
 {
     public class Contact
     {
+        [Key]
         public int ContactId { get; set; }
         public string Name { get; set; }
         public string Mail { get; set; }
