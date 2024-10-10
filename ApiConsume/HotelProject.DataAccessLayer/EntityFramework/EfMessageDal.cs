@@ -10,5 +10,10 @@ namespace HotelProject.DataAccessLayer.EntityFramework
         public EfMessageDal(Context context) : base(context)
         {
         }
+
+        public int SendMessageCount()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
